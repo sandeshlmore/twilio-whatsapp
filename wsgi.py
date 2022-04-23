@@ -1,3 +1,5 @@
+import os
+
 from werkzeug import run_simple
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
@@ -15,4 +17,5 @@ application = DispatcherMiddleware(app, {
 
 
 if __name__ == '__main__':
-    run_simple('0.0.0.0', 8000, application, use_debugger=False, use_reloader=True, threaded=True)
+    port = int(os.environ.get('PORT', 8000))
+    run_simple('0.0.0.0', port, application, use_debugger=False, use_reloader=True, threaded=True)
