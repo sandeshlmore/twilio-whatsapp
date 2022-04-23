@@ -6,3 +6,7 @@ gen
 __pycache__
 /*.zip
 heroku.yml
+venv/
+test/
+test.py
+local/
